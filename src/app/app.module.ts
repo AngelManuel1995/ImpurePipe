@@ -3,8 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { UnfinishedComponent } from './components/unfinished/unfinished.component'
+import { UnfinishedComponent } from './components/unfinished/unfinished.component';
 import { FinishedComponent } from './components/finished/finished.component';
+import { ListService }       from './services/list.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { FinishedComponent } from './components/finished/finished.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [ListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ListService }       from '../../services/list.service';
 
 @Component({
     selector:'app-unfinished',
@@ -9,8 +10,8 @@ export class UnfinishedComponent implements OnInit{
 
     public test:string = "unfinished component works";
 
-    constructor(){
-
+    constructor(private _listService:ListService){
+        
     }
 
     ngOnInit() {
