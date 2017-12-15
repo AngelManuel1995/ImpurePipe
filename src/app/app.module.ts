@@ -8,6 +8,7 @@ import { UnfinishedComponent } from './components/unfinished/unfinished.componen
 import { FinishedComponent } from './components/finished/finished.component';
 import { ListService }       from './services/list.service';
 import { AddComponent }      from './components/add/add.component';
+import { PlaceholderPipe }   from './pipes/placeholder.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { AddComponent }      from './components/add/add.component';
     HomeComponent,
     UnfinishedComponent,
     FinishedComponent,
-    AddComponent
+    AddComponent,
+    PlaceholderPipe
   ],
   imports: [
     BrowserModule,

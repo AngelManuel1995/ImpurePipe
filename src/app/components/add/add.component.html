@@ -3,7 +3,7 @@
 </p>
 <div class="card margin-5px">
 	<div class="form-group">
-		<label class="col-form-label" for="formGroupExampleInput">Nombre de la lista</label>
+		<label class="col-form-label" for="formGroupExampleInput">{{ listName | placeholder:'Nombre de la lista'}}</label>
 		<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nombre de la lista" [(ngModel)]="listName" name="listName">
 	</div>
 	<div class="form-group">
