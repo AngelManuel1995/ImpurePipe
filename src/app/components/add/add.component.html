@@ -11,12 +11,12 @@
 		<input type="text" class="form-control" id="formGroupExampleInput2" (keyup.enter)="addToList()" placeholder="Nombre del item" [(ngModel)]="itemName" name="itemName">
 		<div class="form-group">
 			<button class="btn btn-link" (click)="addToList()" >Agregar item</button>
-			<p class="animated fadeIn fast errorMessage" *ngIf="errorMessage">{{errorMessage}} | <span class="putPointer" (click)="errorMessage=''">X</span></p>
+			<p class="animated fadeIn fast bg-danger text-white" *ngIf="errorMessage">{{errorMessage}} | <span class="putPointer" (click)="errorMessage=''">X</span></p>
 		</div>
 		<div>
-			<ul>
-				<li *ngFor="let item of listOfItems; let i = index" (click)="deleteItem(i)">
-				<p>{{item.name}} <button class="btn btn-danger btn-sm">borrar</button></p> 	 
+			<ul class="list-group">
+				<li class="list-group-item" *ngFor="let item of listOfItems; let i = index" (click)="deleteItem(i)">
+				<span>{{item.name}} <button class="btn btn-danger btn-sm float-right">borrar</button></span> 	 
 				</li>
 			</ul>
 		</div>
@@ -25,10 +25,4 @@
 	<div class="form-group">
 		<button class="btn btn-primary btn-block" >Agregar lista</button>
 	</div>
-</div>
-
-<div>
-		<p>{{itemName | json}}</p>
-		<p>{{listName | json}}</p>
-		<p>{{listOfItems | json}}</p>
 </div>
