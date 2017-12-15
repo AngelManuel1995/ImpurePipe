@@ -4,17 +4,31 @@
 <div class="card" style="width: 20rem;">
 	<div class="form-group">
 		<label class="col-form-label" for="formGroupExampleInput">Nombre de la lista</label>
-		<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nombre de la lista">
+		<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nombre de la lista" [(ngModel)]="listName" name="listName">
 	</div>
 	<div class="form-group">
 		<label class="col-form-label" for="formGroupExampleInput2">Item</label>
-		<input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Nombre del item">
+		<input type="text" class="form-control" id="formGroupExampleInput2" (keyup.enter)="addToList()" placeholder="Nombre del item" [(ngModel)]="itemName" name="itemName">
 		<div class="form-group">
-			<button class="btn btn-link" >Agregar item</button>
+			<button class="btn btn-link" (click)="addToList()" >Agregar item</button>
+			<p class="animated fadeIn fast errorMessage" *ngIf="errorMessage">{{errorMessage}} | <span class="putPointer" (click)="errorMessage=''">X</span></p>
+		</div>
+		<div>
+			<ul>
+				<li *ngFor="let item of listOfItems; let i = index" (click)="deleteItem(i)">
+				<p>{{item.name}} <button class="btn btn-danger btn-sm">borrar</button></p> 	 
+				</li>
+			</ul>
 		</div>
 	</div>
 
 	<div class="form-group">
 		<button class="btn btn-primary btn-block" >Agregar lista</button>
 	</div>
+</div>
+
+<div>
+		<p>{{itemName | json}}</p>
+		<p>{{listName | json}}</p>
+		<p>{{listOfItems | json}}</p>
 </div>

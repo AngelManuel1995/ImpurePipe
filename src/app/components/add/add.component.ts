@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Item, List }        from '../../classes/index';
 
 @Component({
     selector:'app-add',
@@ -6,8 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class AddComponent implements OnInit{
-    
-    public test:string = "Add component works";
+
+    public itemName:string="";
+    public listName:string="";
+    public errorMessage:string = "";
+
+    listOfItems:Item[] = [];
+
 
     constructor(){
 
@@ -15,5 +21,21 @@ export class AddComponent implements OnInit{
 
     ngOnInit() {
     
+    }
+
+    addToList(){
+        if(this.itemName === ""){
+            this.errorMessage = "El campo del item está vacio";
+        }else{
+            this.errorMessage = "";
+            let newItem:Item = new Item();
+            newItem.name = this.itemName;
+            this.listOfItems.push(newItem);
+            this.itemName = "";
+        }
+    }
+
+    deleteItem(idx:number){
+        this.listOfItems.splice(idx,1);
     }
 }
