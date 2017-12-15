@@ -6,13 +6,15 @@ import { HomeComponent } from './components/home/home.component';
 import { UnfinishedComponent } from './components/unfinished/unfinished.component';
 import { FinishedComponent } from './components/finished/finished.component';
 import { ListService }       from './services/list.service';
+import { AddComponent }      from './components/add/add.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     UnfinishedComponent,
-    FinishedComponent
+    FinishedComponent,
+    AddComponent
   ],
   imports: [
     BrowserModule

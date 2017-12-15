@@ -1,12 +1,12 @@
 <p>
-    Lista de tareas no terminadas
+	<strong>Lista de tareas no terminadas</strong>
 </p>
 
 <div *ngFor="let list of _listService.lists" >
-    {{ list.name }}<hr>
-    <ul>
-        <li *ngFor="let item of list.items" >
-            {{ item.name }}
-        </li>
-    </ul>
+	{{ list.name }}<hr>
+	<ul>
+			<li *ngFor="let item of list.items" >
+					{{ item.name }}
+			</li>
+	</ul>
 </div>

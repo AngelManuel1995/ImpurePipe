@@ -1,0 +1,19 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+    selector:'app-add',
+    templateUrl:'./add.component.html'
+})
+
+export class AddComponent implements OnInit{
+    
+    public test:string = "Add component works";
+
+    constructor(){
+
+    }
+
+    ngOnInit() {
+    
+    }
+}
