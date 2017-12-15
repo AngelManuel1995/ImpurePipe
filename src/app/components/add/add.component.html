@@ -1,7 +1,7 @@
 <p>
 	<strong>Agregar nueva lista</strong>
 </p>
-<div class="card" style="width: 20rem;">
+<div class="card margin-5px">
 	<div class="form-group">
 		<label class="col-form-label" for="formGroupExampleInput">Nombre de la lista</label>
 		<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nombre de la lista" [(ngModel)]="listName" name="listName">
@@ -11,7 +11,8 @@
 		<input type="text" class="form-control" id="formGroupExampleInput2" (keyup.enter)="addToList()" placeholder="Nombre del item" [(ngModel)]="itemName" name="itemName">
 		<div class="form-group">
 			<button class="btn btn-link" (click)="addToList()" >Agregar item</button>
-			<p class="animated fadeIn fast bg-danger text-white" *ngIf="errorMessage">{{errorMessage}} | <span class="putPointer" (click)="errorMessage=''">X</span></p>
+			<p class="animated fadeIn fast bg-danger text-white" *ngIf="errorMessageItem">{{errorMessageItem}} | <span class="putPointer" (click)="errorMessageItem=''">x</span></p>
+			<p class="animated fadeIn fast bg-danger text-white" *ngIf="errorMessageList">{{errorMessageList}} | <span class="putPointer" (click)="errorMessageList=''">x</span></p>
 		</div>
 		<div>
 			<ul class="list-group">
@@ -23,6 +24,6 @@
 	</div>
 
 	<div class="form-group">
-		<button class="btn btn-primary btn-block" >Agregar lista</button>
+		<button class="btn btn-primary btn-block" (click)="saveList()">Agregar lista</button>
 	</div>
 </div>

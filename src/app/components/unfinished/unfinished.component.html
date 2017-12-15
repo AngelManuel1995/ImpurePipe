@@ -2,10 +2,10 @@
 	<strong>Lista de tareas no terminadas</strong>
 </p>
 
-<div *ngFor="let list of _listService.lists" >
-	{{ list.name }}<hr>
-	<ul>
-			<li *ngFor="let item of list.items" >
+<div *ngFor="let list of _listService.lists" class="card margin-5px" >
+	<strong>{{ list.name }}</strong>
+	<ul class="list-group">
+			<li *ngFor="let item of list.items" class="list-group-item" >
 					{{ item.name }}
 			</li>
 	</ul>

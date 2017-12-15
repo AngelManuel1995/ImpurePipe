@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Item, List }        from '../../classes/index';
+import { ListService }       from '../../services/list.service'; 
 
 @Component({
     selector:'app-add',
@@ -10,12 +11,12 @@ export class AddComponent implements OnInit{
 
     public itemName:string="";
     public listName:string="";
-    public errorMessage:string = "";
+    public errorMessageItem:string = "";
+    public errorMessageList:string = "";
+    public listOfItems:Item[] = [];
 
-    listOfItems:Item[] = [];
 
-
-    constructor(){
+    constructor( private _listService:ListService ){
 
     }
 
@@ -25,9 +26,9 @@ export class AddComponent implements OnInit{
 
     addToList(){
         if(this.itemName === ""){
-            this.errorMessage = "El campo del item está vacio";
+            this.errorMessageItem = "El campo del item está vacio";
         }else{
-            this.errorMessage = "";
+            this.errorMessageItem = "";
             let newItem:Item = new Item();
             newItem.name = this.itemName;
             this.listOfItems.push(newItem);
@@ -37,5 +38,20 @@ export class AddComponent implements OnInit{
 
     deleteItem(idx:number){
         this.listOfItems.splice(idx,1);
+    }
+
+
+    saveList(){
+        if(this.listName === ""){
+            this.errorMessageList = "El nombre de la lista vacio";
+        }else{
+            this.errorMessageList = "";
+            let newList = new List(this.listName);
+            newList.items = this.listOfItems;
+            this._listService.addList(newList);
+            this.listName = "";
+            this.listOfItems = [];
+
+        }
     }
 }
