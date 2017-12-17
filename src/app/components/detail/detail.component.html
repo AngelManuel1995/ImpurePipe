@@ -1,4 +1,4 @@
-<div class="card margin-5px animated fadeIn fast" >
+<div *ngIf="list" class="card margin-5px animated fadeIn fast" >
 	<strong class="putPointer">{{ list.name }}</strong>
 	<ul class="list-group">
 		<li *ngFor="let item of list.items" class="list-group-item"  >
@@ -10,5 +10,5 @@
 		</li>
 	</ul>
 	<br>
-	<button class="btn btn-danger btn-block btn-sm putPointer" >Eliminar lista</button>
+	<button class="btn btn-danger btn-block btn-sm putPointer" (click)="deleteList()" >Eliminar lista</button>
 </div>
