@@ -26,4 +26,8 @@ export class DetailComponent implements OnInit {
         });
     }
 
+    deleteList(){
+        this._listService.removeList(this.idx);
+    }
+
 }
