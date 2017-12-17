@@ -2,10 +2,10 @@
 	<strong>Lista de tareas no terminadas</strong>
 </p>
 
-<div *ngFor="let list of _listService.lists" class="card margin-5px" >
-	<strong class="putPointer">{{ list.name }} <small>{{ list.items.length }} items</small></strong>
+<div *ngFor="let list of _listService.lists; let i = index" class="card margin-5px" >
+	<strong class="putPointer" (click)="listDetail(i)">{{ list.name }} <small>{{ list.items.length }} items</small></strong>
 	<ul class="list-group">
-			<li *ngFor="let item of list.items" class="list-group-item" >
+			<li *ngFor="let item of list.items" class="list-group-item" (click)="listDetail(i)" >
 					<span> 
 						{{ item.name }}
 						<img *ngIf="!item.finished" class="animated fadeIn fast float-right "  src="https://d30y9cdsu7xlg0.cloudfront.net/png/337763-200.png" width="15" height="15" alt=""> 

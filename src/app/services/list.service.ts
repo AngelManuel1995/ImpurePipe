@@ -5,7 +5,7 @@ import { Item, List } from '../classes/index';
 
 export class ListService{
 
-	lists:List[]=[];
+	lists:List[] = [];
 
 	constructor(){
 
@@ -35,6 +35,9 @@ export class ListService{
 		this.updateInfo();
 	}
 
+	getList(idx:number):List{
+		return this.lists[idx];
+	}
 
 
 }

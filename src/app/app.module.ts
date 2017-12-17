@@ -10,6 +10,7 @@ import { ListService }         from './services/list.service';
 import { AddComponent }        from './components/add/add.component';
 import { DetailComponent }     from './components/detail/detail.component';
 import { PlaceholderPipe }     from './pipes/placeholder.pipe';
+import { APP_ROUTING }         from '../app/app.routes';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { PlaceholderPipe }     from './pipes/placeholder.pipe';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    APP_ROUTING
   ],
   providers: [ListService],
   bootstrap: [AppComponent]
