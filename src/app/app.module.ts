@@ -11,6 +11,7 @@ import { AddComponent }        from './components/add/add.component';
 import { DetailComponent }     from './components/detail/detail.component';
 import { PlaceholderPipe }     from './pipes/placeholder.pipe';
 import { APP_ROUTING }         from '../app/app.routes';
+import { FilterPipe }          from '../app/pipes/filter.pipe';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { APP_ROUTING }         from '../app/app.routes';
     FinishedComponent,
     AddComponent,
     DetailComponent,
-    PlaceholderPipe
+    PlaceholderPipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
