@@ -32,4 +32,8 @@ export class DetailComponent implements OnInit {
         this._router.navigate(['detail']);
     }
 
+    verify(){
+        this._router.navigate(['detail']);
+    }
+
 }

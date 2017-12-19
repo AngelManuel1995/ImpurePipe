@@ -11,8 +11,8 @@
 		<input type="text" class="form-control" id="formGroupExampleInput2" (keyup.enter)="addToList()" placeholder="Nombre del item" [(ngModel)]="itemName" name="itemName">
 		<div class="form-group">
 			<button class="btn btn-link" (click)="addToList()" >Agregar item</button>
-			<p class="animated fadeIn fast bg-danger text-white" *ngIf="errorMessageItem">{{errorMessageItem}} | <span class="putPointer" (click)="errorMessageItem=''">x</span></p>
-			<p class="animated fadeIn fast bg-danger text-white" *ngIf="errorMessageList">{{errorMessageList}} | <span class="putPointer" (click)="errorMessageList=''">x</span></p>
+			<p class="animated fadeIn fast bg-danger text-white" *ngIf="errorMessageItem">{{errorMessageItem}} | <span class="putPointer" (click)="errorMessageItem=''"><strong>x</strong></span></p>
+			<p class="animated fadeIn fast bg-danger text-white" *ngIf="errorMessageList">{{errorMessageList}} | <span class="putPointer" (click)="errorMessageList=''"><strong>x</strong></span></p>
 		</div>
 		<div>
 			<ul class="list-group">
