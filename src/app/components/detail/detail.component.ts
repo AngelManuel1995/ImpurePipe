@@ -45,8 +45,6 @@ export class DetailComponent implements OnInit {
         }
         this.list.finished = todosMarcados;
         this._listService.updateInfo();
-
-        console.log(this.list);
     }
 
     ready(){

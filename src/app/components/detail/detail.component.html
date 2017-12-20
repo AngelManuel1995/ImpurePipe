@@ -1,5 +1,5 @@
 <div *ngIf="list" class="card margin-5px animated fadeIn fast" >
-	<strong class="putPointer">{{ list.name }}</strong>
+	<strong class="putPointer">{{ list.name }} | {{ idx }}</strong>
 	<ul class="list-group">
 		<li *ngFor="let item of list.items" class="list-group-item"  >
 			<span> 

@@ -22,6 +22,7 @@ export class FinishedComponent implements OnInit{
     }
 
     listDetail(idx:number){
+        console.log(idx);
         this._router.navigate(['/detail', idx]);
     }
 
